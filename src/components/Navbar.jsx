@@ -25,7 +25,7 @@ const SearchIcon = () => {
 
 function Navbar({theme, setTheme}) {
     return (
-<nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-2 px-8'>
+<nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-3 px-8'>
             
             <input type="text" placeholder={`Find Something...`} className='hidden lg:block bg-black/20  border border-slate-800 rounded-full px-2 placeholder:text-xs w-96 placeholder:text-slate-800'/>
             <div className='flex flex-row space-x-4 justify-center items-center'>
