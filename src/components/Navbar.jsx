@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@radui/ui/Button';
 import Text from '@radui/ui/Text';
 import Seperator from '@radui/ui/Separator';
+import ButtonGreen from './ButtonGreen';
 
 const MoonIcon = () => {
     return (
@@ -26,14 +27,15 @@ function Navbar({theme, setTheme}) {
     return (
 <nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-2 px-8'>
             
-            <input type="text" placeholder='Search...' className='hidden lg:block bg-slate-200/5 rounded-full p-2 w-96'/>
-            <div className='flex flex-row space-x-4'>
-            <div className='flex flex-row space-x-6 items-center'>
+            <input type="text" placeholder={`Find Something...`} className='hidden lg:block bg-black/20  border border-slate-800 rounded-full px-2 placeholder:text-xs w-96 placeholder:text-slate-800'/>
+            <div className='flex flex-row space-x-4 justify-center items-center'>
+            <div className='flex flex-row space-x-6 items-center hidden md:flex'>
                 <Text>API</Text>
                 <Text>Documentation</Text>
                 <Text>Support</Text>
+                <Seperator orientation="vertical" />
             </div>
-            <Seperator orientation="vertical" />
+            
             <SearchIcon/>
             <Button
             customRootClass='no'
@@ -42,9 +44,9 @@ function Navbar({theme, setTheme}) {
                 <Text>{theme === 'dark' ? <MoonIcon/> : <SunIcon/>}</Text>
                 
             </Button>
-            <Button>
-                Sign IN
-            </Button>
+            <ButtonGreen>
+                Sign in
+            </ButtonGreen>
             </div>
         </nav>
     );
