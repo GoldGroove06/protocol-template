@@ -1,10 +1,13 @@
+"use client"
 import Image from "next/image";
+import PageFooter from "@/components/PageFooter";
 
 
 export default function Home() {
   return (
-   <div className="bg-gray-1000 text-slate-200 h-screen">
+   <div className=" h-screen">
     helo
+    <PageFooter/>
    </div>
   );
 }
