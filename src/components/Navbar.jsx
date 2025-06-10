@@ -24,11 +24,11 @@ const SearchIcon = () => {
 
 function Navbar({theme, setTheme}) {
     return (
-<nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-2'>
+<nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-2 px-8'>
             
             <input type="text" placeholder='Search...' className='hidden lg:block bg-slate-200/5 rounded-full p-2 w-96'/>
             <div className='flex flex-row space-x-4'>
-            <div className='flex flex-row space-x-4 items-center'>
+            <div className='flex flex-row space-x-6 items-center'>
                 <Text>API</Text>
                 <Text>Documentation</Text>
                 <Text>Support</Text>

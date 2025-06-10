@@ -14,6 +14,7 @@ function Layout({children, theme, setTheme}) {
                 <Navbar theme={theme} setTheme={setTheme}/>
                 <div className='flex flex-col max-w-[1080px] w-full mx-auto pl-8 pr-8'>
                     {children}
+                   
                 </div>
             </div>
         </div>
