@@ -68,17 +68,17 @@ export default function Home() {
         <Seperator />
         <div className="  grid grid-cols-1 gap-8 pt-10 sm:grid-cols-2 xl:grid-cols-4">
           <LandingCard title='Contacts' >
-            'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.'
+            Learn about the contact model and how to create, retrieve, update, delete, and list contacts.
           </LandingCard>
 
           <LandingCard title='Contacts' >
-            'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.'
+            Learn about the contact model and how to create, retrieve, update, delete, and list contacts.
           </LandingCard>
           <LandingCard title='Contacts' >
-            'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.'
+            Learn about the contact model and how to create, retrieve, update, delete, and list contacts.
           </LandingCard>
           <LandingCard title='Contacts' >
-            'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.'
+            Learn about the contact model and how to create, retrieve, update, delete, and list contacts.
           </LandingCard>
 
         </div>
