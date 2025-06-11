@@ -4,6 +4,7 @@ import DesktopSidebar from './DesktopSidebar';
 import Navbar from './Navbar';
 import PageFooter from './PageFooter';
 import { ChildContext } from './Context';
+import ScrollArea from '@radui/ui/ScrollArea';
 
 function Layout({ children, theme, setTheme }) {
     const [sectionRefs, setSectionRefs] = useState({});
@@ -59,14 +60,23 @@ function Layout({ children, theme, setTheme }) {
             <div className=' hidden lg:block'>
                 <DesktopSidebar visibleSection={visibleSection}/>
             </div>
-            <div className='flex flex-col flex-1  h-screen overflow-y-scroll'>
-                <Navbar theme={theme} setTheme={setTheme} />
-                <div className='flex flex-col max-w-[1080px] w-full mx-auto pl-8 pr-8'>
-                    <ChildContext.Provider value={{ setSectionRefs, setSections }}>
-                        {children}
-                    </ChildContext.Provider>
-                </div>
-            </div>
+             <ScrollArea.Root>
+                <ScrollArea.Viewport>
+                    <div className='flex flex-col flex-1  h-screen'>
+                        <Navbar theme={theme} setTheme={setTheme} />
+                        <div className='flex flex-col max-w-[1080px] w-full mx-auto pl-8 pr-8'>
+                            <ChildContext.Provider value={{ setSectionRefs, setSections }}>
+                                {children}
+                            </ChildContext.Provider>
+                        </div>
+                    </div>
+                </ScrollArea.Viewport>
+
+                <ScrollArea.Scrollbar orientation='vertical'>
+                    <ScrollArea.Thumb />
+                </ScrollArea.Scrollbar>
+            </ScrollArea.Root>
+
         </div>
     );
 }

@@ -106,7 +106,7 @@ export default function Home() {
       </section>
       <PageFooter
         nextText='Quickstart'
-
+        nextLink='/quickstart'
       />
     </div>
   );

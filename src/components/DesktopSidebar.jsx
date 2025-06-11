@@ -3,6 +3,9 @@ import React from 'react';
 import Text from '@radui/ui/Text';
 import Heading from '@radui/ui/Heading';
 import Seperator from '@radui/ui/Separator';
+import ScrollArea from '@radui/ui/ScrollArea';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const LogoIcon = () => {
     return(
@@ -11,45 +14,60 @@ const LogoIcon = () => {
 }
 
 function DesktopSidebar({visibleSection}) {
+    const pathname = usePathname();
+
     return (
-        <div  className='flex flex-row h-screen lg:w-80  p-4 overflow-y-scroll'  >
-            <div className='h-[110%] space-y-6 w-full'>
+         <ScrollArea.Root>
+                <ScrollArea.Viewport>
+        <div  className='flex flex-row h-screen lg:w-80  p-4'  >
+            <div className=' space-y-6 w-full'>
                <div className='flex flex-row items-start justify-start'><LogoIcon/> <Text className='!text-xl font-semibold text-slate-1000'>Protocol</Text></div>
                 <div className='space-y-4 '>
                     <Text as="h6" className="text-slate-1000 !text-sm font-medium">Guides</Text>
                     <div className='space-y-3 border border-r-0 border-b-0  border-t-0 border-l-slate-300 relative'>
                      
-                        <div className='pl-4 '>
-                            <span className='absolute top-1 left-0 h-6 w-0.5 border border-l-teal-950'></span>
-                            <div className={` py-2 pl-2 text-slate-1000 ${visibleSection.intro ? "bg-slate-300 rounded-t-lg" : ""}`}>Introduction</div>
-                            <div className=''>
-                                <div className={`py-1 ${visibleSection.guides  ? "bg-slate-300" : ""} pl-8 ${ visibleSection.guides && !visibleSection.intro && visibleSection.resources ? "rounded-t-lg" : ""}${visibleSection.guides && visibleSection.intro && !visibleSection.resources? "rounded-b-lg" : ""}` }>Guides</div>
-                                <div className={` pl-8 py-1  ${visibleSection.resources ? "bg-slate-300 rounded-b-lg" : ""} ${visibleSection.resources && !visibleSection.guides ? "rounded-lg" : ""}`}>Resources</div>
-                            </div>
+                        <div className='pl-2 '>
+                            {pathname==="/" && (<span className='absolute top-1 left-0 h-6 w-0.5 border border-l-teal-950'></span>)}
+                            <div className={` pl-2 ${pathname==="/" && " py-2 text-slate-1000"} ${visibleSection.intro ? "bg-slate-300 rounded-t-lg" : ""}`}><Link href="/">Introduction</Link></div>
+                            {pathname==="/" && (<div className=''>
+                                <div className={`py-1 ${visibleSection.guides  ? "bg-slate-300" : ""} pl-8 ${ visibleSection.guides && !visibleSection.intro && visibleSection.resources ? "rounded-t-lg" : ""}${visibleSection.guides && visibleSection.intro && !visibleSection.resources? "rounded-b-lg" : ""}` }><Link href="#guides">Guides</Link></div>
+                                <div className={` pl-8 py-1  ${visibleSection.resources ? "bg-slate-300 rounded-b-lg" : ""} ${visibleSection.resources && !visibleSection.guides ? "rounded-lg" : ""}`}><Link href="#resources">Resources</Link></div>
+                            </div>)}
                         </div>
 
-                         <div className='pl-4 space-y-2'>
-                            <div>Quickstart</div>
+                         <div className='pl-2 space-y-2'>
+                            {pathname==="/quickstart" && <span className='absolute top-10 left-0 h-6 w-0.5 border border-l-teal-950'></span>}
+                            <div className={`pl-2 ${pathname==="/quickstart" && " py-2 text-slate-1000"}`}><Link href="/quickstart">Quickstart</Link></div>
+                            {pathname==="/quickstart" && (<div>
+                                <div className='pl-8 py-1'>Choose your client</div>
+                                <div className='pl-8 py-1'>Choose your client</div>
+                                <div className='pl-8 py-1'>Choose your client</div>
+                            </div>)}
                            
                         </div>
 
 
-                         <div className='pl-4 space-y-2'>
-                            <div>SDKs</div>
+                         <div className='pl-2 space-y-2'>
+                            <div className='pl-2'>SDKs</div>
                            
                         </div>
 
 
-                         <div className='pl-4 space-y-2'>
-                            <div>Authentication</div>
+                         <div className='pl-2 space-y-2'>
+                            <div className='pl-2'>Authentication</div>
                             
                         </div>
-                        
                         
                     </div>              
                 </div>
                 </div>
         </div>
+        </ScrollArea.Viewport>
+   
+                <ScrollArea.Scrollbar orientation='vertical'>
+                    <ScrollArea.Thumb />
+                </ScrollArea.Scrollbar>
+        </ScrollArea.Root>
     );
 }
 
