@@ -19,7 +19,7 @@ function Layout({ children, theme, setTheme }) {
       const id = entry.target.id;
 
       if (entry.isIntersecting) {
-        newVisibleSections[id] = true; // or some metadata like entry.intersectionRatio
+        newVisibleSections[id] = true;
       } else {
         delete newVisibleSections[id];
       }
