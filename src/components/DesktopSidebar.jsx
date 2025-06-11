@@ -28,10 +28,10 @@ function DesktopSidebar({visibleSection}) {
                      
                         <div className='pl-2 '>
                             {pathname==="/" && (<span className='absolute top-1 left-0 h-6 w-0.5 border border-l-teal-950'></span>)}
-                            <div className={` pl-2 ${pathname==="/" && " py-2 text-slate-1000"} ${visibleSection.intro ? "bg-slate-300 rounded-t-lg" : ""}`}><Link href="/">Introduction</Link></div>
+                            <div className={` pl-2 ${pathname==="/" && " py-2 text-slate-1000"} transition-all duration-300 ease-in-out will-change-transform ${visibleSection.intro ? "bg-slate-300 rounded-t-lg" : ""}`} ><Link href="/">Introduction</Link></div>
                             {pathname==="/" && (<div className=''>
-                                <div className={`py-1 ${visibleSection.guides  ? "bg-slate-300" : ""} pl-8 ${ visibleSection.guides && !visibleSection.intro && visibleSection.resources ? "rounded-t-lg" : ""}${visibleSection.guides && visibleSection.intro && !visibleSection.resources? "rounded-b-lg" : ""}` }><Link href="#guides">Guides</Link></div>
-                                <div className={` pl-8 py-1  ${visibleSection.resources ? "bg-slate-300 rounded-b-lg" : ""} ${visibleSection.resources && !visibleSection.guides ? "rounded-lg" : ""}`}><Link href="#resources">Resources</Link></div>
+                                <div className={`py-1 ${visibleSection.guides  ? "bg-slate-300" : ""}  transition-all duration-300 ease-in-out will-change-transform pl-8 ${ visibleSection.guides && !visibleSection.intro && visibleSection.resources ? "rounded-t-lg" : ""}${visibleSection.guides && visibleSection.intro && !visibleSection.resources? "rounded-b-lg" : ""}` }><Link href="#guides">Guides</Link></div>
+                                <div className={` pl-8 py-1  ${visibleSection.resources ? "bg-slate-300 rounded-b-lg" : ""}  transition-all duration-300 ease-in-out will-change-transform ${visibleSection.resources && !visibleSection.guides ? "rounded-lg" : ""}`}><Link href="#resources">Resources</Link></div>
                             </div>)}
                         </div>
 
