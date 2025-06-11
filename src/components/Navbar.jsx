@@ -27,12 +27,12 @@ function Navbar({theme, setTheme}) {
     return (
 <nav className='sticky top-0 w-full flex flex-row lg:justify-between justify-end item-center bg-slate-200/80 backdrop-blur-2xl shadow-md z-50 p-3 px-8'>
             
-            <input type="text" placeholder={`Find Something...`} className='hidden lg:block bg-black/20  border border-slate-800 rounded-full px-2 placeholder:text-xs w-96 placeholder:text-slate-800'/>
+            <input type="text" placeholder={`Find Something...`} className='hidden lg:block bg-slate-200 bg-opacity-10 backdrop-blur-2xl w-80 border border-slate-800 rounded-full px-2 placeholder:text-xs  placeholder:text-slate-800'/>
             <div className='flex flex-row space-x-4 justify-center items-center'>
             <div className='flex flex-row space-x-6 items-center hidden md:flex'>
-                <Text>API</Text>
-                <Text>Documentation</Text>
-                <Text>Support</Text>
+                <Text className="hover:text-slate-1000">API</Text>
+                <Text className="hover:text-slate-1000">Documentation</Text>
+                <Text className="hover:text-slate-1000">Support</Text>
                 <Seperator orientation="vertical" />
             </div>
             
@@ -40,6 +40,7 @@ function Navbar({theme, setTheme}) {
             <Button
             customRootClass='no'
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="hover:bg-slate-200 hover:text-slate-1000 p-1 rounded-lg"
             >
                 <Text>{theme === 'dark' ? <MoonIcon/> : <SunIcon/>}</Text>
                 

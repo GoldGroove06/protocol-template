@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const LogoIcon = () => {
     return(
-        <svg viewBox="0 0 25 50" aria-hidden="true" className="h-12 w-12"><path className="fill-emerald-400" d="M16 8a5 5 0 0 0-5-5H5a5 5 0 0 0-5 5v13.927a1 1 0 0 0 1.623.782l3.684-2.93a4 4 0 0 1 2.49-.87H11a5 5 0 0 0 5-5V8Z"></path></svg>
+        <svg viewBox="0 0 25 40" aria-hidden="true" className="h-12 w-12"><path className="fill-emerald-400" d="M16 8a5 5 0 0 0-5-5H5a5 5 0 0 0-5 5v13.927a1 1 0 0 0 1.623.782l3.684-2.93a4 4 0 0 1 2.49-.87H11a5 5 0 0 0 5-5V8Z"></path></svg>
     )
 }
 
@@ -21,7 +21,7 @@ function DesktopSidebar({visibleSection}) {
                 <ScrollArea.Viewport>
         <div  className='flex flex-row h-screen lg:w-80  p-4'  >
             <div className=' space-y-6 w-full'>
-               <div className='flex flex-row items-start justify-start'><LogoIcon/> <Text className='!text-xl font-semibold text-slate-1000'>Protocol</Text></div>
+               <div className='flex flex-row items-start justify-start'><div><LogoIcon/></div><div> <Text className='!text-xl font-semibold text-slate-1000'>Protocol</Text></div></div>
                 <div className='space-y-4 '>
                     <Text as="h6" className="text-slate-1000 !text-sm font-medium">Guides</Text>
                     <div className='space-y-3 border border-r-0 border-b-0  border-t-0 border-l-slate-300 relative'>

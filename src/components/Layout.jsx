@@ -60,23 +60,24 @@ function Layout({ children, theme, setTheme }) {
             <div className=' hidden lg:block'>
                 <DesktopSidebar visibleSection={visibleSection}/>
             </div>
-             <ScrollArea.Root>
-                <ScrollArea.Viewport>
+             
                     <div className='flex flex-col flex-1  h-screen'>
                         <Navbar theme={theme} setTheme={setTheme} />
+                        <ScrollArea.Root>
+                <ScrollArea.Viewport>
                         <div className='flex flex-col max-w-[1080px] w-full mx-auto pl-8 pr-8'>
                             <ChildContext.Provider value={{ setSectionRefs, setSections }}>
                                 {children}
                             </ChildContext.Provider>
                         </div>
-                    </div>
+                    
                 </ScrollArea.Viewport>
 
                 <ScrollArea.Scrollbar orientation='vertical'>
                     <ScrollArea.Thumb />
                 </ScrollArea.Scrollbar>
             </ScrollArea.Root>
-
+        </div>
         </div>
     );
 }
